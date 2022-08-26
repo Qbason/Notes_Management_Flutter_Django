@@ -1,4 +1,4 @@
-### Flutter + Django Rest Api
+### Flutter + Django Rest Api + OAuth2
 
 <div>
 
