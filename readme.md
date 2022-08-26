@@ -2,22 +2,22 @@
 
 <div>
 
-<img src="https://github.com/Qbason/Notes_Management_Flutter_Django/blob/main/images/1.jpg">
+<img src="https://github.com/Qbason/Notes_Management_Flutter_Django/blob/main/images/1.png">
 
 </div>
 <div>
 
-<img src="https://github.com/Qbason/Notes_Management_Flutter_Django/blob/main/images/2.jpg">
+<img src="https://github.com/Qbason/Notes_Management_Flutter_Django/blob/main/images/2.png">
 
 </div>
 <div>
 
-<img src="https://github.com/Qbason/Notes_Management_Flutter_Django/blob/main/images/3.jpg">
+<img src="https://github.com/Qbason/Notes_Management_Flutter_Django/blob/main/images/3.png">
 
 </div>
 <div>
 
-<img src="https://github.com/Qbason/Notes_Management_Flutter_Django/blob/main/images/4.jpg">
+<img src="https://github.com/Qbason/Notes_Management_Flutter_Django/blob/main/images/4.png">
 
 </div>
 

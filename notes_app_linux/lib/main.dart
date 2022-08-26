@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Loggin page',
+      title: 'Notes management',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
