@@ -56,8 +56,8 @@ class _UpdatePageState extends State<UpdatePage> {
                     hintText: 'Enter content of note'),
               )),
           ElevatedButton(
-              onPressed: () {
-                widget.client.put(updateurlNote(widget.id), body: {
+              onPressed: () async {
+                await widget.client.put(updateurlNote(widget.id), body: {
                   'title': controller.text,
                   'content': controller2.text
                 });
