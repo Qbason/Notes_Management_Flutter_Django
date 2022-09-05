@@ -1,4 +1,5 @@
 import 'package:notes_app_linux/first_page.dart';
+import 'package:notes_app_linux/registration.dart';
 import 'package:notes_app_linux/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -49,6 +50,11 @@ class _LoginPageState extends State<LoginPage> {
     }
 
     //var notes = getNotes(client);
+  }
+
+  void goToRegistration() {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => Registration()));
   }
 
   @override
@@ -103,15 +109,18 @@ class _LoginPageState extends State<LoginPage> {
             child: TextButton(
                 onPressed: checkLoginAndPassword,
                 child: const Text('Login',
-                    style: TextStyle(color: Colors.white, fontSize: 25))),
+                    style: TextStyle(color: Colors.red, fontSize: 25))),
           ),
           showInfoBadCredential
               ? const BadCredentials()
               : const GoodCredentials(),
-          const Expanded(
+          Expanded(
             child: Align(
-              alignment: FractionalOffset(0.5, 0.1),
-              child: Text('New User? Create Account'),
+              alignment: const FractionalOffset(0.5, 0.1),
+              child: TextButton(
+                onPressed: goToRegistration,
+                child: const Text('New User? Create Account'),
+              ),
             ),
           ),
         ],
