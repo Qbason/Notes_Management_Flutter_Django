@@ -44,15 +44,11 @@ class UserViewSet(viewsets.ViewSet):
     authentication_classes = []
     permission_classes = []
 
-    # def create(self,request):
-
-    #     user = UserSerializer().create(
-    #         validated_data = request.data
-    #     )
-    #     return Response(user)
-
     def create(self, request):
         validated_data = request.data
+
+
+
         user =  User.objects.create(
             username = validated_data['username'],
             email = validated_data['email']   
