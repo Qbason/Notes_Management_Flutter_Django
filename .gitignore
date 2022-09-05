@@ -57,3 +57,5 @@ drf_example
 
 notes_app_linux/*
 !notes_app_linux/lib
+notes/db.sqlite3
+
