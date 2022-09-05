@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
             child: TextButton(
                 onPressed: checkLoginAndPassword,
                 child: const Text('Login',
-                    style: TextStyle(color: Colors.red, fontSize: 25))),
+                    style: TextStyle(color: Colors.white, fontSize: 25))),
           ),
           showInfoBadCredential
               ? const BadCredentials()
