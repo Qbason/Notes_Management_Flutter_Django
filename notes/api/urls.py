@@ -12,6 +12,11 @@ router.register(
     views.NotesViewSet,
     basename='notes'
 )
+router.register(
+    r'user',
+    views.UserViewSet,
+    basename='user'
+)
 
 
 urlpatterns = [

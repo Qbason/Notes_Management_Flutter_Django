@@ -7,12 +7,14 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 #from api.serializers import UserSerializer
 from api.models import Note
-from api.serializers import NoteSerializer
+from api.serializers import NoteSerializer, UserSerializer
 #from api.permissions import IsOwner
 
 from django.contrib.auth.models import User
 
 from oauth2_provider.contrib.rest_framework import TokenHasReadWriteScope, TokenHasScope,OAuth2Authentication
+
+# from notes.api import serializers
 
 
 class NotesViewSet(viewsets.ModelViewSet):
@@ -34,3 +36,38 @@ class NotesViewSet(viewsets.ModelViewSet):
         queryset_only_user = get_object_or_404(self.queryset,pk=pk,owner=self.request.user)
         serializer = NoteSerializer(queryset_only_user,many=False)
         return Response(serializer.data)
+
+class UserViewSet(viewsets.ViewSet):
+
+    queryset = Note.objects.all()
+    serializer_class = UserSerializer
+    authentication_classes = []
+    permission_classes = []
+
+    # def create(self,request):
+
+    #     user = UserSerializer().create(
+    #         validated_data = request.data
+    #     )
+    #     return Response(user)
+
+    def create(self, request):
+        validated_data = request.data
+        user =  User.objects.create(
+            username = validated_data['username'],
+            email = validated_data['email']   
+        )
+        user.set_password(
+            validated_data['password']
+        )
+        user.save()
+
+        user_serializered = UserSerializer(
+            user
+        )
+
+
+
+        return Response(user_serializered.data)
+
+
